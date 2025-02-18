@@ -62,8 +62,10 @@ async function activateXR(): Promise<void> {
         }
     );
 
+    const baseLayer = new XRWebGLLayer(session, gl);
+
     session.updateRenderState({
-        baseLayer: new XRWebGLLayer(session, gl)
+        baseLayer
     });
 
     const referenceSpaceTypes: XRReferenceSpaceType[] = [
